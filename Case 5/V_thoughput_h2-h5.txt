@@ -1,0 +1,3 @@
+Client connected with server 10.0.5.3:8088
+                  ID            Interval            Transfer           Bandwidth
+      10.0.0.3:50740          0.0 - 25.6            22.12 MB           6.90 Mbps
