@@ -79,7 +79,7 @@ def validate_args(args):
         sys.exit("Error: Invalid value for '-f' flag. Format must be either B, KB, or MB")
     
     # Checks if the value for the '-t' flag is a positive integer
-    if args.time < 1:
+    if args.time is not None and args.time < 1:
         sys.exit("Error: Invalid value for '-t' flag. Duration in seconds must be a positive integer")
     
     # Checks if the value for the '-i' flag is a positive integer
@@ -126,7 +126,7 @@ def print_table(data):
     # Prints out the data element in a single row
     print(format_row.format(*data))
 
-# This function handles the connection to the server
+# This function handles the packages in the server, where it will receives from the client
 def handle_server(client_socket, client_address, input_format):
     # Using the client socket
     with client_socket:
@@ -222,7 +222,7 @@ def start_server(args):
             # Initiates the thread
             thread.start()
 
-# This function handles the client connection and sends data to the server
+# This function handles the packages in the client, where it will transfer to the server
 def handle_client(client_socket, client_ip_address, client_port_number, input_time, input_format, input_interval_time, input_num):
     # If the '-n' flag is enabled
     if input_num is not None:
@@ -369,7 +369,7 @@ def start_client(args):
         # Initiates the thread
         thread.start()
 
-    # Awaits for all the threads to finish
+    # Awaiting for all the threads to finish
     for j in connection_list:
         j.join()
 
