@@ -10,34 +10,34 @@ def parse_args():
     # Defines and parses the command-line argument
     parser = argparse.ArgumentParser(description = 'Simpleperf')
     # '-s' flag: Enables the server mode
-    parser.add_argument('-s', '--server', action = 'store_true', help = 'Enable server mode')
+    parser.add_argument('-s', '--server', action = 'store_true', help = "Enables server mode")
 
     # '-c' flag: Enables the client mode
-    parser.add_argument('-c', '--client', action = 'store_true', help = 'Enable client mode')
+    parser.add_argument('-c', '--client', action = 'store_true', help = "Enables client mode")
 
     # '-b' flag: Sets the IP address of the server to bind to. Default value is '127.0.0.1'
-    parser.add_argument('-b', '--bind', type = str, default = '127.0.0.1', help = 'Server IP address')
+    parser.add_argument('-b', '--bind', type = str, default = '127.0.0.1', help = "Selects the IP address of the server's interface")
 
     # '-I' flag: Sets the IP address of the server that the client will connect to. Default value is '127.0.0.1'
-    parser.add_argument('-I', '--serverip', type= str, default = '127.0.0.1', help = 'IP address of server')
+    parser.add_argument('-I', '--serverip', type= str, default = '127.0.0.1', help = "Selects the IP address of server")
 
     # '-p' flag: Sets the port number that the server will listen on or the client will connect to. The default value is 8088
-    parser.add_argument('-p', '--port', type = int, default = 8088, help = 'Server port number')
+    parser.add_argument('-p', '--port', type = int, default = 8088, help = "Selects the port number")
 
     # '-f' flag: Sets the format for the summary data that will be printed. The default value is MB
-    parser.add_argument('-f', '--format', type = str, default = 'MB', help = 'Summary format (B/KB/MB)')
+    parser.add_argument('-f', '--format', type = str, default = 'MB', help = "Format of the output data (B/KB/MB)")
 
     # '-t' flag: Sets the duration in seconds for which the data should be generated. The default value is 25
-    parser.add_argument('-t', '--time', type = int, default = 25, help = 'Duration in seconds for which data should be generated')
+    parser.add_argument('-t', '--time', type = int, default = 25, help = "Selects a duration in seconds for which data should be generated")
 
     # '-i' flag: Sets the interval in seconds at which statistics should be printed
-    parser.add_argument('-i', '--interval', type = int, help = 'Print statistics per specidied interval in seconds')
+    parser.add_argument('-i', '--interval', type = int, help = "Print statistics per specidied interval in seconds")
 
     # '-n' flag: Sets the number of bytes that should be transferred by the client
-    parser.add_argument('-n', '--num', type = str, help = 'Transfer number of bytes')
+    parser.add_argument('-n', '--num', type = str, help = "Transfer number of bytes (B/KB/MB)")
 
     # '-P' flag: Sets the number between 1-5 of parallel connections to the server. The default value is 1
-    parser.add_argument('-P', '--parallel', type = int, default = 1, help = 'Number of parallel connections to the server (1-5)')
+    parser.add_argument('-P', '--parallel', type = int, default = 1, help = "Number of parallel connections to the server (1-5)")
 
     # Parsing the command-line arguments
     args = parser.parse_args()
