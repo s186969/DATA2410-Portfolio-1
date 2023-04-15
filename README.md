@@ -19,14 +19,14 @@ python3 simpleperf.py [arguments]
 
 ## Usage
 ```
--s, --server      Enable server mode
--c, --client      Enable client mode
--b, --bind        Server IP address
--I, --serverip    IP address of server
--p, --port        Server port number
--f, --format      Summary format (B/KB/MB)
--t, --time        Duration in seconds for which data should be generated
--i, --interval    Print statistics per specified interval in seconds
--n, --num         Transfer number of bytes
--P, --parallel    Number of parallel connections to the server
+-s, --server      Enables server mode
+-c, --client      Enables client mode
+-b, --bind        Selects the IP address of the server's interface
+-I, --serverip    Selects the IP address of server
+-p, --port        Selects port number
+-f, --format      Format of the output data (B/KB/MB)
+-t, --time        Selects a duration in seconds for which data should be generated
+-i, --interval    Prints statistics per specified interval in seconds
+-n, --num         Transfers number of bytes
+-P, --parallel    Creates parallel connections to connect to the server
 ```
