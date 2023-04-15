@@ -29,8 +29,8 @@ Simpleperf accepts several command-line arguments, which are listed below:
 -f, --format      Format of the output data (B/KB/MB)
 -t, --time        Selects a duration in seconds for which data should be generated
 -i, --interval    Prints statistics per specified interval in seconds
--n, --num         Transfers number of bytes
--P, --parallel    Creates parallel connections to connect to the server
+-n, --num         Transfers number of bytes (B/KB/MB)
+-P, --parallel    Creates parallel connections to connect to the server (1-5)
 ```
 
 To run the tool in server mode, use the -s flag:
