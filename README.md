@@ -11,7 +11,7 @@ To install Simpleperf, you can download the script directly from GitHub or clone
 git clone https://github.com/s186969/DATA2410-Portfolio-1.git
 ```
 
-Once the repository has been cloned, you can run the script using Python 3:
+Once the repository has been cloned, you can run the script in a topology using Python 3:
 
 ```
 python3 simpleperf.py <arguments>
@@ -32,20 +32,37 @@ Simpleperf accepts several command-line arguments, which are listed below:
 -n, --num         Transfers number of bytes (B/KB/MB)
 -P, --parallel    Creates parallel connections to connect to the server (1-5)
 ```
-
-To run the tool in server mode, use the -s flag:
-```
-python3 simpleperf.py -s -b <ip_address> -p <port_number> -f <byte_format>
-```
-
-To run the tool in client mode, use the -c flag:
-```
-python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <byte_format> -t <seconds>
-```
-
 For a full list of available options, use the -h flag:
 ```
 python3 simpleperf.py -h
+```
+
+### Server mode
+To run the tool in server mode, use the -s flag:
+```
+python3 simpleperf.py -s -b <ip_address> -p <port_number> -f <print_format>
+```
+
+### Client mode
+
+To run the tool in client mode, use the -c flag:
+```
+python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -t <seconds>
+```
+
+To print the data in a specified interval in client mode, use the -i flag:
+```
+python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -t <seconds> -i <seconds>
+```
+
+To transfer a specified amount of bytes in client mode, use the -n flag:
+```
+python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -n <integerFormat>
+```
+
+To connect the client with a specified connection in parallel in client mode, use the -P flag:
+```
+python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -P <number_of_connections>
 ```
 
 ## Examples
