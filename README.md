@@ -32,6 +32,19 @@ Simpleperf accepts several command-line arguments, which are listed below:
 -n, --num         Transfers number of bytes (B/KB/MB)
 -P, --parallel    Creates parallel connections to connect to the server (1-5)
 ```
+
+The arguments are not set in positionals. You can set the order of the arguments as you wish.
+
+Following arguments have a default value if they are not set:
+```
+-b, --bind        127.0.0.1
+-I, --serverip    127.0.0.1
+-p, --port        8088
+-f, --format      MB
+-t, --time        25
+-P, --parallel    1
+```
+
 For a full list of available options, use the -h flag:
 ```
 python3 simpleperf.py -h
@@ -62,7 +75,7 @@ python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -n <
 
 To connect the client with a specified connection in parallel in client mode, use the -P flag:
 ```
-python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -P <number_of_connections>
+python3 simpleperf.py -c -I <ip_address> -p <port_number> -f <print_format> -t <seconds> -P <number_of_connections>
 ```
 
 ## Examples
